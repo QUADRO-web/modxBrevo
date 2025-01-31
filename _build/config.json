@@ -3,7 +3,7 @@
 	"lowCaseName": "brevo",
 	"description": "Brevo FormIt Subscribe Hook",
 	"author": "Jan Dähne",
-	"version": "1.0.0-pl",
+	"version": "1.0.1-pl",
 	"package": {
 		"elements": {
             "snippets": [
