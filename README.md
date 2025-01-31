@@ -15,6 +15,7 @@ Add api key to your system settings
 [[!FormIt?
    &hooks=`brevoSubscribe`
    &listIds=`yourListIds` // comma separated list
+   &attributes=`firstname=FNAME,lastname=LNAME` // Optional attributes to add to the contact
 ]]
 
 <form action="[[~[[*id]]]]" method="post">
@@ -27,3 +28,9 @@ Add api key to your system settings
 </form>
 ```
 
+## Properties
+Property | Description | Default Value
+--- | --- | ---
+brevoEmailField  | Field name of email input field. | email
+brevoListIds  | Comma separeted list of List-Ids. Example 2,3 |
+brevoAttributes | Additional attributes to add to the contact, like firstname, lastname, phone etc. A comma separted list of fieldnames and brevo fieldnames in uppercase. Example: myinputfieldname=BREVOFIELDNAME,firstname=FNAME |
