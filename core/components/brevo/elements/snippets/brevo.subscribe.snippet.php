@@ -32,12 +32,12 @@ foreach ($attributes as $attribute){
 $brv = new Brevo($modx);
 
 // create contact
-$brv->createContact($data = array(
+$contact = $brv->createContact($data = array(
     'email' => $hook->getValue($emailField),
     'listIds' => $listIds,
     'attributes' => $attributesData
 ));
 
-die('test');
+if (!$contact) return;
 
-return;
+return true;
