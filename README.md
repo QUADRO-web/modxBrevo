@@ -14,17 +14,16 @@ Add api key to your system settings
 ```
 [[!FormIt?
    &hooks=`brevoSubscribe`
-   &listId=`yourListId`
+   &listIds=`yourListIds` // comma separated list
 ]]
 
 <form action="[[~[[*id]]]]" method="post">
     <div>
         <label>E-mail: </label>
-        <input type="text" name="email" value="[[!+fi.email]]">
-        <span class="error">[[!+fi.error.email]]</span>
+        <input type="email" name="email" value="[[!+fi.email]]">
     </div>
 
-    <button type="submit">send</button>
+    <button type="submit">senden</button>
 </form>
 ```
 
