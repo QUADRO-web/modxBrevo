@@ -14,8 +14,8 @@ Add api key to your system settings
 ```
 [[!FormIt?
    &hooks=`brevoSubscribe`
-   &listIds=`yourListIds` // comma separated list
-   &attributes=`firstname=FNAME,lastname=LNAME` // Optional attributes to add to the contact
+   &brevoListIds=`yourListIds` // comma separated list
+   &brevoAttributes=`firstname=FNAME,lastname=LNAME` // Optional attributes to add to the contact
 ]]
 
 <form action="[[~[[*id]]]]" method="post">
