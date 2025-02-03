@@ -18,9 +18,8 @@ $brevo = $modx->getService('brevo', 'brevo', $corePath . 'model/brevo/', array(
 // properties
 $listIds = array_map('intval', explode(',', $modx->getOption('brevoListIds', $scriptProperties)));
 $emailField = $modx->getOption('brevoEmailField', $scriptProperties, 'email');
-$attributes = explode(',', $modx->getOption('brevoAttributes', $scriptProperties));
+$attributes = array_filter(explode(',', $modx->getOption('brevoAttributes', $scriptProperties, '')));
 $attributesData = array();
-
 
 // formatting attributes
 foreach ($attributes as $attribute){
@@ -35,7 +34,7 @@ $brv = new Brevo($modx);
 $contact = $brv->createContact($data = array(
     'email' => $hook->getValue($emailField),
     'listIds' => $listIds,
-    'attributes' => $attributesData
+    'attributes' => (object) $attributesData,
 ));
 
 if (!$contact) return;
